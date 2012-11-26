@@ -47,6 +47,25 @@ class PeopleController < ApplicationController
   end
 ```
 
+Then your view must return a KMLFile object, for example:
+
+``` ruby
+require 'ruby_kml'
+
+kml = KMLFile.new
+folder= KML::Folder.new(:name => 'People')
+
+@person.each do |person|
+  point = KML::Point.new :coordinates => { :lat => person.latitude,
+                                           :lng => person.longitude }
+  place = KML::Placemark.new :geometry => point, :name => person.name
+  folder.features << place
+end
+
+kml.objects << folder
+kml
+```
+
 etc...
 
 ## Dependencies
