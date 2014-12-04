@@ -21,8 +21,8 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_runtime_dependency 'porth'
   s.add_runtime_dependency 'ruby_kml'
-  s.add_runtime_dependency 'actionpack'
-  s.add_runtime_dependency 'activerecord'
+ 
+  
 
   s.add_development_dependency 'rspec'
   s.add_development_dependency 'rake',     '~> 0.9.2'
